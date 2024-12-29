@@ -1,0 +1,348 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("img/wall.jpeg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 7%;
+  background-color: white;
+  border-bottom: 1px solid #ebcfc4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.editable-header {
+  font-size: 2em;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #ebcfc4;
+  outline: none;
+  margin: 0;
+  border: none;
+  padding: 10px 0 0 50px;
+}
+
+.editable-header[contenteditable="true"]:empty {
+  color: #aaa;
+  font-style: italic;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 10px;
+}
+
+/* Styling untuk kolom kiri */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Elemen kotak atas dan bawah */
+.top,
+.bottom {
+  background-color: rgba(248, 218, 218);
+  border-radius: 15px;
+}
+
+/* Ukuran kotak atas */
+.top {
+  width: 450px;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2), 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ukuran kotak bawah */
+.bottom {
+  width: 450px;
+  height: 150px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2), 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Kolom kanan */
+.right {
+  background-color: rgba(248, 218, 218);
+  width: 600px;
+  height: 460px;
+  border-radius: 15px;
+  overflow-y: auto;
+  padding: 20px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2), 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* pomodoro */
+#timer {
+  font-size: 70px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.mode {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-bottom: 1px rgb(220, 220, 220);
+  color: rgba(51, 51, 51, 0.8);
+  padding: 15px;
+  font-size: 17px;
+  transition-duration: 0.2s;
+}
+
+.mode.active {
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+.mode.active:hover {
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+.mode:hover {
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+.timer-control {
+  border: none;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  color: black;
+  mix-blend-mode: lighten;
+  padding: 10px 20px;
+  font-size: 20px;
+  transition-duration: 0.2s;
+  margin: 10px 5px;
+}
+
+.timer-control:disabled {
+  background-color: rgb(227, 226, 226, 0.62);
+}
+
+.timer-control:disabled:hover {
+  background-color: rgb(227, 226, 226, 0.62);
+}
+
+.timer-control:hover {
+  background-color: rgb(227, 226, 226, 0.62);
+}
+
+#duration-control {
+  margin-top: 20px;
+  user-select: none;
+}
+
+#duration-control .input-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+#duration-control .input-row input {
+  width: 80px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.3s;
+}
+
+#duration-control .input-row input:focus {
+  border-color: #ff9999;
+  box-shadow: 0 0 5px rgba(255, 153, 153, 0.5);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* todo list */
+h1 {
+  font-size: 25px;
+}
+
+h1,
+form {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+form input,
+form button {
+  padding: 0.3rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  border: none;
+  background: white;
+  border-radius: 2rem;
+}
+
+form button {
+  color: gray;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3 ease;
+  margin-left: 0.5rem;
+}
+
+form button:hover {
+  color: white;
+  background: gray;
+}
+
+.fa-circle-plus {
+  margin-top: 0.9rem;
+  margin-left: -10px;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  padding-left: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 2rem;
+}
+
+.todo li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.complete-btn {
+  background: gray;
+}
+
+.trash-btn {
+  border-top-right-radius: 1.75rem;
+  border-bottom-right-radius: 1.75rem;
+  background: rgb(171, 171, 171);
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-circle-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.slide {
+  transform: translateX(10rem);
+  opacity: 0;
+}
+
+/* Queries */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .left,
+  .right {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .top {
+    margin-top: 70px;
+    width: 90%;
+  }
+
+  .bottom {
+    margin-top: 10px;
+    width: 90%;
+  }
+
+  .right {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+  }
+
+  .todo-list {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .top,
+  .bottom,
+  .right {
+    width: 95%;
+  }
+
+  .todo-list {
+    width: 85%;
+  }
+}

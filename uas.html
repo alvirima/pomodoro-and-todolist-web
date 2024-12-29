@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>UAS KBP</title>
+  </head>
+  <body>
+    <div class="navbar" style="padding-bottom: 20px">
+      <h1
+        class="editable-header"
+        contenteditable="true"
+        id="editableHeader"
+        data-placeholder="New page"
+      >
+        New page
+      </h1>
+    </div>
+
+    <!-- isi -->
+    <div class="container" style="margin-top: 20px">
+      <div class="left">
+        <div class="top">
+          <div id="modes">
+            <button data-mode-id="pomodoro" class="mode active">
+              Pomodoro
+            </button>
+            <button data-mode-id="short" class="mode">Short Break</button>
+            <button data-mode-id="long" class="mode">Long Break</button>
+          </div>
+          <div id="timer">25:00</div>
+          <div id="controls">
+            <button onclick="startTimer()" class="timer-control start">
+              Start
+            </button>
+            <button onclick="pauseTimer()" class="timer-control pause">
+              Pause
+            </button>
+            <button onclick="nextMode()" class="timer-control">Skip</button>
+          </div>
+          <div id="duration-control">
+            <div class="input-row">
+              <input
+                type="number"
+                placeholder="work duration"
+                class="duration"
+                data-duration-id="pomodoro"
+              />
+              <br />
+              <input
+                type="number"
+                placeholder="short break"
+                class="duration"
+                data-duration-id="short"
+              />
+              <br />
+              <input
+                type="number"
+                placeholder="long break"
+                class="duration"
+                data-duration-id="long"
+              />
+              <br />
+            </div>
+          </div>
+        </div>
+        <!-- spotify  -->
+        <div class="bottom">
+          <div class="spotify-player">
+            <iframe
+              style="border-radius: 12px"
+              src="https://open.spotify.com/embed/playlist/3ts2GH2ZCEjYrnNTjfirj6?utm_source=generator&theme=0"
+              width="100%"
+              height="152"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <!-- TO-DO LIST -->
+      <div class="right">
+        <h1>To-Do List</h1>
+        <form action="">
+          <input type="text" class="todo-input" />
+          <button class="todo-button" type="submit">
+            <i class="fa-solid fa-circle-plus fa-lg"></i>
+          </button>
+        </form>
+        <div class="todo-container">
+          <ul class="todo-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
