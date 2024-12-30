@@ -4,11 +4,11 @@ Web ini adalah aplikasi sederhana berbasis web yang menggabungkan fitur **Pomodo
 
 ## 🫧 Fitur 
 - **Timer Pomodoro** ⏲️
-   Mode fokus dengan durasi 25 menit, disertai dengan pilihan istirahat pendek dan panjang.
+   -Mode fokus dengan durasi 25 menit, disertai dengan pilihan istirahat pendek dan panjang.
 - **To-Do List** 📝
-  Tambahkan, centang, dan hapus daftar tugas. 
+  -Tambahkan, centang, dan hapus daftar tugas. 
 - **Spotify** 🎶
-  Belajar anti ngantuk sambil dengerin musik. 
+  -Belajar anti ngantuk sambil dengerin musik. 
 
 ## 🌐 Cara Kerja Website
 1. **Timer Pomodoro**
